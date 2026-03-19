@@ -1,0 +1,79 @@
+.testimonialsSection {
+  padding: 5rem 0;
+  background-color: var(--color-bg-card);
+  position: relative;
+  border-top: var(--glass-border);
+  border-bottom: var(--glass-border);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--color-text-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--color-bg-deep);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-neon-cyan);
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.15);
+}
+
+.stars {
+  color: #FBBF24;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.text {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.authorGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-neon-cyan), #0369a1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.author {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.role {
+  color: var(--color-neon-cyan);
+  font-size: 0.85rem;
+}

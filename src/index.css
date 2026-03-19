@@ -1,0 +1,59 @@
+:root {
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --color-bg-deep: #0B0F19; /* Fundo extremamente escuro e profundo */
+  --color-bg-card: #141B2D; /* Fundo secundário para seções/cards */
+  --color-bg-input: #1C263A; /* Input field backgorund */
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #94A3B8;
+
+  --color-neon-cyan: #06B6D4;
+  --color-neon-green: #10B981;
+  --color-neon-purple: #8B5CF6;
+  --color-error: #EF4444;
+
+  --glow-cyan: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3);
+  --glow-green: 0 0 10px rgba(16, 185, 129, 0.5), 0 0 20px rgba(16, 185, 129, 0.3);
+  
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  
+  --glass-bg: rgba(20, 27, 45, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-neon-cyan);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-shadow: var(--glow-cyan);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

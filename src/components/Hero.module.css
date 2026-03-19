@@ -1,0 +1,126 @@
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-deep);
+  /* Fallback image if needed, or pure CSS gradient */
+  background: radial-gradient(circle at 15% 50%, rgba(6, 182, 212, 0.1), transparent 25%),
+              radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.05), transparent 25%);
+  overflow: hidden;
+  padding-top: 80px; /* Header offset */
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.highlight {
+  color: var(--color-neon-cyan);
+  text-shadow: var(--glow-cyan);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  max-width: 500px;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--color-neon-cyan) 0%, #0369a1 100%);
+  color: var(--color-text-primary);
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--glow-cyan);
+  margin-top: 1rem;
+}
+
+.ctaButton:hover {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.8);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* Graphic composition */
+.imagePlaceholder {
+  position: relative;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageGlow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--color-neon-cyan);
+  filter: blur(100px);
+  opacity: 0.2;
+  border-radius: 50%;
+}
+
+.techCircle {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: 1px dashed var(--color-neon-cyan);
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+}
+
+.circleOffset1 {
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  animation: spin 30s linear infinite reverse;
+}
+
+.circleOffset2 {
+  width: 180px;
+  height: 180px;
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .textContent {
+    align-items: center;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+}

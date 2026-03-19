@@ -1,0 +1,57 @@
+.brandsSection {
+  background-color: var(--color-bg-card);
+  padding: 3rem 0;
+  border-top: var(--glass-border);
+  border-bottom: var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 10;
+}
+
+.brandsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.brandsText {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.brandLogos {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: 800;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.brandIntelbras {
+  color: #10B981;
+  text-shadow: 0 0 15px rgba(16, 185, 129, 0.6), 0 0 30px rgba(16, 185, 129, 0.4);
+}
+
+.brandHikvision {
+  color: #EF4444;
+  text-shadow: 0 0 15px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.4);
+}
+
+.brand:hover {
+  transform: scale(1.05);
+}
+
+.divider {
+  width: 2px;
+  height: 40px;
+  background: var(--color-neon-cyan);
+  opacity: 0.3;
+}
