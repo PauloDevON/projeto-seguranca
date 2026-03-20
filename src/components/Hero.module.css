@@ -114,7 +114,9 @@
 
 @media (max-width: 768px) {
   .heroSection {
-    padding-top: 120px;
+    padding-top: 180px;
+    padding-bottom: 4rem;
+    min-height: auto;
   }
   .heroContent {
     grid-template-columns: 1fr;
@@ -123,11 +125,6 @@
   }
   .textContent {
     align-items: center;
-  }
-  .heroSection {
-    padding-top: 100px;
-    padding-bottom: 4rem;
-    min-height: auto;
   }
   .title {
     font-size: 1.8rem;
