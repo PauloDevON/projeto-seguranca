@@ -113,14 +113,25 @@
 }
 
 @media (max-width: 768px) {
+  .heroSection {
+    padding-top: 120px;
+  }
   .heroContent {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 2rem;
   }
   .textContent {
     align-items: center;
   }
   .title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .imagePlaceholder {
+    height: 300px;
+    transform: scale(0.8);
   }
 }
