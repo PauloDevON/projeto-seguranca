@@ -15,7 +15,7 @@ export function Header() {
             <ShieldCheck size={26} className={styles.logoIcon} />
             Projeto Segurança
           </div>
-          <span className={styles.slogan}>Sua segurança, nosso compromisso</span>
+          <span className={styles.slogan}>Sua segurança, nosso compromisso!</span>
         </a>
         <nav className={styles.nav}>
           <a href="#solucoes">Soluções</a>
