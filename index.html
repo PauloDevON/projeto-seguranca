@@ -7,6 +7,16 @@
     <title>temp-vite</title>
   </head>
   <body>
+    <!-- A hidden form to help Netlify find the fields to receive your emails! -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nome" />
+      <input type="text" name="telefone" />
+      <input type="email" name="email" />
+      <input type="text" name="tipoSolucao" />
+      <textarea name="descricao"></textarea>
+      <input type="text" name="dataCompra" />
+      <input type="text" name="comoEncontrou" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

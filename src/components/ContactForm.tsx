@@ -43,18 +43,38 @@ export function ContactForm({ onSubmitSuccess }: Props) {
       return;
     }
     
-    // Success
-    console.log('Submitting data:', data);
-    if (onSubmitSuccess) onSubmitSuccess();
-    
-    // Form will not reset on success automatically to show success state typically,
-    // but we can reset per requirement
-    reset();
-    setChallenge(generateAntiBotChallenge());
+    // Prepare data for Netlify Forms
+    const formData = new URLSearchParams();
+    formData.append("form-name", "contact");
+    formData.append("nome", data.nome);
+    formData.append("telefone", data.telefone);
+    formData.append("email", data.email);
+    formData.append("tipoSolucao", data.tipoSolucao);
+    formData.append("descricao", data.descricao || '');
+    formData.append("dataCompra", data.dataCompra || '');
+    formData.append("comoEncontrou", data.comoEncontrou || '');
+
+    // Submit via AJAX so the page doesn't reload
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString()
+    })
+      .then(() => {
+         if (onSubmitSuccess) onSubmitSuccess();
+         reset();
+         setChallenge(generateAntiBotChallenge());
+         alert('Enviado com sucesso! Nossos especialistas entrarão em contato em breve.');
+      })
+      .catch((error) => {
+         console.error('Error:', error);
+         alert('Erro de conexão ao enviar o formulário.');
+      });
   };
 
   return (
-    <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
+    <form name="contact" data-netlify="true" className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
+      <input type="hidden" name="form-name" value="contact" />
       <h2 className={styles.formTitle}>Solicite um Orçamento Especialista</h2>
       
       <div className={styles.inputGroup}>
