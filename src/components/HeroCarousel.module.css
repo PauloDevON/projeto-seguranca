@@ -103,10 +103,27 @@
 
 @media (max-width: 768px) {
   .dynamicTextOverlay {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    margin-top: 2rem;
-    max-width: 100%;
+    position: absolute;
+    right: 5%;
+    left: 5%;
+    bottom: 2rem;
+    max-width: 90%;
+    text-align: center;
+  }
+  
+  .dynamicTitle {
+    font-size: 1.1rem;
+  }
+  
+  .dynamicDesc {
+    font-size: 0.85rem;
+  }
+  
+  .dynamicTextBox {
+    padding: 1rem;
+  }
+  
+  .indicators {
+    justify-content: center;
   }
 }

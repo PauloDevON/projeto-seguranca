@@ -124,8 +124,13 @@
   .textContent {
     align-items: center;
   }
+  .heroSection {
+    padding-top: 100px;
+    padding-bottom: 4rem;
+    min-height: auto;
+  }
   .title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
   .subtitle {
     font-size: 1rem;

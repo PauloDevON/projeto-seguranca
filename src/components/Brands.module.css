@@ -55,3 +55,17 @@
   background: var(--color-neon-cyan);
   opacity: 0.3;
 }
+
+@media (max-width: 768px) {
+  .brandLogos {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .brand {
+    font-size: 1.4rem;
+  }
+  .brandsContainer {
+    padding: 0 1rem;
+  }
+}
