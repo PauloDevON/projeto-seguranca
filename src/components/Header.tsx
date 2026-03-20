@@ -19,7 +19,7 @@ export function Header() {
         </a>
         <nav className={styles.nav}>
           <a href="#solucoes">Soluções</a>
-          <a href="#contato" className={styles.btnNav}>Fale Conosco</a>
+          <a href="#formulario-contato" className={styles.btnNav}>Fale Conosco</a>
         </nav>
       </div>
     </header>

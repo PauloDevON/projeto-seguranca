@@ -73,7 +73,7 @@ export function ContactForm({ onSubmitSuccess }: Props) {
   };
 
   return (
-    <form name="contact" data-netlify="true" className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
+    <form id="formulario-contato" name="contact" data-netlify="true" className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
       <input type="hidden" name="form-name" value="contact" />
       <h2 className={styles.formTitle}>Solicite um Orçamento Especialista</h2>
       
