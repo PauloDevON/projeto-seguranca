@@ -9,6 +9,8 @@
   <body>
     <!-- A hidden form to help Netlify find the fields to receive your emails! -->
     <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
       <input type="text" name="nome" />
       <input type="text" name="telefone" />
       <input type="email" name="email" />
@@ -16,6 +18,7 @@
       <textarea name="descricao"></textarea>
       <input type="text" name="dataCompra" />
       <input type="text" name="comoEncontrou" />
+      <button type="submit">Enviar</button>
     </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
