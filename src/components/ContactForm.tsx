@@ -54,22 +54,51 @@ export function ContactForm({ onSubmitSuccess }: Props) {
     formData.append("dataCompra", data.dataCompra || '');
     formData.append("comoEncontrou", data.comoEncontrou || '');
 
-    // Submit via AJAX so the page doesn't reload
-    fetch("/", {
+    const SUPABASE_URL = 'https://frvcuqibnnzzfrlylnsz.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_p2b-1u8q9ZVXo8idMmbU1g_QL721AY9';
+
+    const supabaseData = {
+      nome: data.nome,
+      telefone: data.telefone,
+      email: data.email,
+      solucao_interesse: data.tipoSolucao,
+      descricao: data.descricao,
+      status: 'Novo contato'
+    };
+
+    // 1. Envia o Lead para o banco de dados do Supabase (CRM)
+    fetch(`${SUPABASE_URL}/rest/v1/leads`, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: formData.toString()
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": SUPABASE_KEY,
+        "Authorization": `Bearer ${SUPABASE_KEY}`,
+        "Prefer": "return=representation"
+      },
+      body: JSON.stringify(supabaseData)
     })
-      .then(() => {
-         if (onSubmitSuccess) onSubmitSuccess();
-         reset();
-         setChallenge(generateAntiBotChallenge());
-         alert('Enviado com sucesso! Nossos especialistas entrarão em contato em breve.');
-      })
-      .catch((error) => {
-         console.error('Error:', error);
-         alert('Erro de conexão ao enviar o formulário.');
+    .then(async (response) => {
+      if (!response.ok) {
+        console.error("Falha ao enviar lead para o CRM.");
+      }
+      
+      // 2. Envia também via AJAX para os forms do Netlify como um backup transparente
+      return fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formData.toString()
       });
+    })
+    .then(() => {
+       if (onSubmitSuccess) onSubmitSuccess();
+       reset();
+       setChallenge(generateAntiBotChallenge());
+       alert('Enviado com sucesso! Nossos especialistas entrarão em contato em breve.');
+    })
+    .catch((error) => {
+       console.error('Error:', error);
+       alert('Erro de conexão ao enviar o formulário.');
+    });
   };
 
   return (
